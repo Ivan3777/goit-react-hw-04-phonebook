@@ -1,8 +1,9 @@
 import propTypes from 'prop-types';
+import React from 'react';
 import { useState } from 'react';
 import css from './ContactForm.module.css';
 
-export const ContactForm = () => {
+export const ContactForm = ({handleSubmit}) => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
@@ -36,15 +37,15 @@ export const ContactForm = () => {
   // };
 
 
-  const handleSubmit = e => {
+  const handleFormSubmit = e => {
     const form = e.currentTarget;
-    handleSubmit();
+    handleSubmit({ name: name, number: number });
     form.reset();
     e.preventDefault();
   };
 
   return (
-    <form className={css.form} onSubmit={handleSubmit}>
+    <form className={css.form} onSubmit={handleFormSubmit}>
       <label className={css.formLabel}>Name </label>
       <input
         className={css.formName}
