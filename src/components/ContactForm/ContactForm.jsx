@@ -22,21 +22,6 @@ export const ContactForm = ({handleSubmit}) => {
     }
   };
 
-  // const handleChangeName = e => {
-  //   setName(e.target.value);
-  // };
-
-  // const handleChangeNumber = e => {
-  //   setNumber(e.target.value);
-  // };
-
-
-  // handleChange = e => {
-  //   const { name, value } = e.target;
-  //   this.setState({ [name]: value });
-  // };
-
-
   const handleFormSubmit = e => {
     const form = e.currentTarget;
     handleSubmit({ name: name, number: number });
